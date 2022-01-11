@@ -1,0 +1,61 @@
+@startuml core-class-diagram
+
+class Model {
+  +{static} String OBURGERID
+  +{static} String OSHAKEID
+  +{static} String OFRIESID
+  +{static} String ONUGGETSID
+  -{static} List<MenuItem> menu
+  -Order order
+  -Mode mode
+  +{static} List<MenuItem> getMenu()
+  +{static} MenuItem getMenuItem(String id)
+  +void goHome()
+  +void viewReceipts()
+  +void beginOrder()
+  +void finishOrder()
+  +void addItem(MenuItem item)
+  +void removeItem(MenuItem item)
+  +Mode getMode()
+  +Order getOrder()
+}
+enum Mode {
+  startPage,
+  order,
+  view
+}
+class Order {
+  -{static} int COUNTLIMIT
+  -HashMap<MenuItem, Integer> items
+  -boolean finished
+  +void addItem(MenuItem item)
+  +void removeItem(MenuItem item)
+  +int getCount(MenuItem item)
+  +void finish()
+  +boolean isFinished()
+}
+class Receipt {
+  -List<String> itemNames
+  -List<Integer> counts
+  +List<String> getItemNames()
+  +List<Integer> getCounts()
+  +void setItemNames(List<String> names)
+  +void setCounts(List<Integer> counts)
+  +String getDescription()
+}
+class MenuItem {
+  -String id
+  -String name
+  -double cost
+  +String getId()
+  +String getName()
+  +double getCost()
+}
+
+Model -- Mode : > has a
+Model - Order : > has one
+Model - MenuItem : > has many
+Order -- MenuItem : > has many
+Order -- Receipt : > can convert into
+
+@enduml

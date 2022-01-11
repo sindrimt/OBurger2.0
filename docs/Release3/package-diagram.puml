@@ -1,0 +1,63 @@
+@startuml package-diagram
+
+
+
+component ui {
+	package ui.ui
+}
+component restapi {
+	package restapi.restapi
+}
+component restserver {
+  package restserver.restserver
+}
+component jackson {
+  package jackson.jackson
+}
+component core {
+	package core.core
+}
+
+
+
+
+component junit {
+  component jupiter {
+  }
+}
+component com.fasterxml.jackson {
+}
+component javafx {
+	component fxml {
+	}
+}
+component testfx {
+
+}
+component springframework {
+  component springboot {
+
+  }
+}
+
+ui <-- jackson
+ui <--- core
+ui <.... javafx
+ui <.... testfx
+ui <.... junit
+restserver <-- jackson
+restserver <--- core
+restserver <.... springframework
+restserver <.... junit
+
+jackson <-- core
+jackson <... com.fasterxml.jackson
+jackson <... junit
+
+core <.. junit
+
+
+
+
+
+@enduml

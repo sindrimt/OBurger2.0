@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AppController">
+   <children>
+      <Pane prefHeight="215.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="136.0" layoutY="145.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/plus.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="15.0" layoutY="154.0" preserveRatio="true">
+               <image>
+                  <Image url="@../images/minus.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+            <Label fx:id="ofries" layoutX="76.0" layoutY="162.0" text="count" />
+            <ImageView fitHeight="149.0" fitWidth="152.0" layoutX="15.0">
+               <image>
+                  <Image url="@../images/ofries.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
